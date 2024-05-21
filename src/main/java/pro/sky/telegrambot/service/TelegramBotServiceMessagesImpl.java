@@ -75,7 +75,7 @@ public class TelegramBotServiceMessagesImpl implements TelegramBotServiceMessage
     @Override
     public void mandrelNotificationMessage() {
         LocalDateTime localDateTime = LocalDateTime.now().truncatedTo(ChronoUnit.HOURS);
-        Collection<Notification> notifications = repository.findNotificationDate(localDateTime);
+        Collection<Notification> notifications = repository.findByTimeDate(localDateTime);
         notifications.forEach(task -> {
             mandrelMessage(task);
             task.setSentDate();

@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface RepositoryNotificationBot extends JpaRepository<Notification, Long> {
-    List<Notification> findNotificationDate(LocalDateTime dateTime);
+    List<Notification> findByTimeDate(LocalDateTime dateTime);
 
 }
